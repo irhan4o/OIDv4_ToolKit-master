@@ -1,0 +1,39 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.python-version
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# YOLO outputs and checkpoints
+runs/
+*.pt
+
+# Large datasets and generated data
+train/images/
+train/labels/
+valid/images/
+valid/labels/
+test/images/
+test/labels/
+OID/Dataset/
+OID/csv_folder/
+external_test/
+
+# Caches and logs
+*.log
+.cache/
