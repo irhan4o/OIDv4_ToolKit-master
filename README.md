@@ -11,6 +11,21 @@ The folder [demo/predictions](demo/predictions) contains sample images where the
 ![Rusty car detection](demo/predictions/rusty_car_detection.jpg)
 ![Ferrari detection](demo/predictions/ferrari_detection.jpg)
 
+## How to test your own image
+
+1. Put your test image in the project root (for example `my_test.jpg`).
+2. Run the following Python code:
+
+```python
+from ultralytics import YOLO
+
+model = YOLO("runs/detect/train3/weights/best.pt")
+results = model.predict(source="my_test.jpg", save=True, conf=0.25)
+print("Saved to:", results[0].save_dir)
+```
+
+3. Open the output image from `runs/detect/predict` (or `runs/detect/predict2`, `predict3`, etc.).
+
 Do you want to build your personal object detector but you don't have enough images to train your model? Do you want to train your personal image classifier, but you are tired of the deadly slowness of ImageNet? Have you already discovered [Open Images Dataset v4](https://storage.googleapis.com/openimages/web/index.html) that has [600](https://storage.googleapis.com/openimages/2018_04/bbox_labels_600_hierarchy_visualizer/circle.html) classes and more than 1,700,000 images with related bounding boxes ready to use? Do you want to exploit it for your projects but you don't want to download gigabytes and gigabytes of data!?
 
 With this repository we can help you to get the best of this dataset with less effort as possible.
